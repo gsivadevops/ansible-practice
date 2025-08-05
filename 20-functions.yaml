@@ -41,15 +41,6 @@
   #   ansible.builtin.debug:
   #     msg: "Tools Info: {{ TOOLS | items2dict }}" 
 
-  - name: Convert list into map
-    vars:
-      TOOLS:
-      - ['os', 'Linux']
-      - ['script', 'shell']
-      - ['automation', 'Ansible']
-    ansible.builtin.debug:
-      msg: "Tools Info: {{ TOOLS | items2dict }}"       
-
   - name: convert to uppercase
     vars:
       name: "Sivakumar Reddy M"

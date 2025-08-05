@@ -33,7 +33,16 @@
       - shell
       - Ansible
     ansible.builtin.debug:
-      msg: "Course Info: {{ course | items2dict  }}, Tools Info: {{ TOOLS | items2dict}}"
+      msg: "Course Info: {{ course | items2dict  }}, Tools Info: {{ TOOLS | items2dict }}"
+
+  - name: convert list into map
+    vars:
+      TOOLS: # List []
+      - Linux
+      - shell
+      - Ansible
+    ansible.builtin.debug:
+      msg: "Tools Info: {{ TOOLS | items2dict }}"    
 
   - name: convert to uppercase
     vars:

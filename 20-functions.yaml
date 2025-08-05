@@ -31,14 +31,24 @@
     ansible.builtin.debug:
       msg: "Course Info: {{ course | items2dict  }}"
 
-  - name: convert list into map
+ #this one will give error
+  - name: convert list into map #items2dict expects a list of pairs (key-value tuples or lists)
     vars:
       TOOLS: # List []
       - Linux
       - shell
       - Ansible
     ansible.builtin.debug:
-      msg: "Tools Info: {{ TOOLS | items2dict }}"    
+      msg: "Tools Info: {{ TOOLS | items2dict }}" 
+
+  - name: Convert list into map
+    vars:
+      TOOLS:
+      - ['os', 'Linux']
+      - ['script', 'shell']
+      - ['automation', 'Ansible']
+    ansible.builtin.debug:
+      msg: "Tools Info: {{ TOOLS | items2dict }}"       
 
   - name: convert to uppercase
     vars:

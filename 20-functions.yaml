@@ -55,7 +55,7 @@
 
   - name: check IP address is valid or not
     vars:
-      ip: "192.168.1.1"
+      ip: "192.168.1.1" #if valid it returns the given ip address
       #ip: "300.567.100.298" #output - false
     ansible.builtin.debug:
       msg: "{{ ip | ansible.utils.ipaddr }}"

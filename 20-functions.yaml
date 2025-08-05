@@ -28,12 +28,8 @@
       - {'key': 'name', 'value': 'ansible'}
       - {'key': 'duration', 'value': '10HR'}
       - {'key': 'trainer', 'value': 'sivakumar'}
-      TOOLS: # List []
-      - Linux
-      - shell
-      - Ansible
     ansible.builtin.debug:
-      msg: "Course Info: {{ course | items2dict  }}, Tools Info: {{ TOOLS | items2dict }}"
+      msg: "Course Info: {{ course | items2dict  }}"
 
   - name: convert list into map
     vars:

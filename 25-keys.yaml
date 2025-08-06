@@ -1,20 +1,22 @@
-- name: ping the server
-  hosts: keys
-  tasks:
-  - name: ping the server
-    ansible.builtin.ping:
-
+#checking whether we are able to ping the private key instance or not
 # - name: ping the server
 #   hosts: keys
-#   become: yes
 #   tasks:
-#   - name: install nginx
-#     ansible.builtin.dnf:
-#       name: nginx
-#       state: installed
+#   - name: ping the server
+#     ansible.builtin.ping:
 
-#   - name: run nginx
-#     ansible.builtin.service:
-#       name: nginx
-#       state: started
-#       enabled: yes
+#installing nginx with key based instance
+- name: ping the server
+  hosts: keys
+  become: yes
+  tasks:
+  - name: install nginx
+    ansible.builtin.dnf:
+      name: nginx
+      state: installed
+
+  - name: run nginx
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
